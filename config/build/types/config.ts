@@ -16,4 +16,5 @@ export interface BuildPaths {
 	html: string;
 	entry: string;
 	build: string;
+	src: string;
 }
