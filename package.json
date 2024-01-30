@@ -13,7 +13,7 @@
         "lint:scss:fix": "stylelint \"**/*.scss\" --fix",
         "unit": "jest --config ./config/jest/jest.config.ts"
     },
-    "keywords": [],
+    "keywords": [ ],
     "author": "",
     "license": "ISC",
     "devDependencies": {
