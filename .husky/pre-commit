@@ -1,5 +1,5 @@
-run: npm run build:prod
-run: npm run lint:ts
-run: npm run lint:scss
-run: npm run test:unit
-run: npm run storybook:build
+npm run build:prod
+npm run lint:ts
+npm run lint:scss
+npm run test:unit
+npm run storybook:build
