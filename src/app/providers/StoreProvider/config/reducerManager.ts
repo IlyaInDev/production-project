@@ -21,7 +21,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
                 });
                 keysToRemove = [];
             }
-
+            console.log('reduce was called');
             return combinedReducer(state, action);
         },
 
