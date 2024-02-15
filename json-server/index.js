@@ -59,6 +59,12 @@ server.get('/posts', (req, res) => {
     res.send(posts);
 });
 
+server.get('/profile', (req, res) => {
+    const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'utf-8'));
+    const { profile = {} } = db;
+    res.send(profile);
+});
+
 // Запуск сервера
 server.listen(8000, () => {
     console.log('Server is running on port 8000');

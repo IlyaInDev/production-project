@@ -17,6 +17,13 @@
         }
     ],
     "profile": {
-        "name": "typicode"
+        "first": "Jack",
+        "lastname": "Black",
+        "age": 33,
+        "currency": "RUB",
+        "country": "Russia",
+        "city": "Moscow",
+        "username": "admin",
+        "avatar": "https://wallpapers.com/images/hd/cool-neon-hoodie-profile-picture-vt4w54fxrvenydvu.jpg"
     }
 }
