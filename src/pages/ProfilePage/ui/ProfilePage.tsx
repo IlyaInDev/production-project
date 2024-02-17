@@ -2,8 +2,21 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useEffect } from 'react';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { ProfileCard, fetchProfileData, profileReducer } from 'entities/Profile';
+import {
+    ProfileCard,
+    fetchProfileData,
+    getProfileError,
+    getProfileForm,
+    getProfileIsLoading,
+    getProfileReadonly,
+    profileActions,
+    profileReducer,
+} from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useSelector } from 'react-redux';
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
+import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 interface ProfilePageProps {
     className?: string;
@@ -20,15 +33,65 @@ const ProfilePage = memo((props: ProfilePageProps) => {
 
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
+    const formData = useSelector(getProfileForm);
+    const isLoading = useSelector(getProfileIsLoading);
+    const error = useSelector(getProfileError);
+    const readonly = useSelector(getProfileReadonly);
 
     useEffect(() => {
         dispatch(fetchProfileData());
     }, [dispatch]);
 
+    const onChangeFirstname = (value?: string) => {
+        dispatch(profileActions.updateProfile({ first: value || '' }));
+    };
+
+    const onChangeLastname = (value?: string) => {
+        dispatch(profileActions.updateProfile({ lastname: value || '' }));
+    };
+
+    const onChangeAge = (value?: string) => {
+        dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
+    };
+
+    const onChangeCity = (value?: string) => {
+        dispatch(profileActions.updateProfile({ city: value || '' }));
+    };
+
+    const onChangeUsername = (value?: string) => {
+        dispatch(profileActions.updateProfile({ username: value || '' }));
+    };
+
+    const onChangeAvatar = (value?: string) => {
+        dispatch(profileActions.updateProfile({ avatar: value || '' }));
+    };
+
+    const onChangeCurrency = (currency: Currency) => {
+        dispatch(profileActions.updateProfile({ currency }));
+    };
+
+    const onChangeCountry = (country: Country) => {
+        dispatch(profileActions.updateProfile({ country }));
+    };
+
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
-                <ProfileCard />
+                <ProfilePageHeader />
+                <ProfileCard
+                    data={formData}
+                    isLoading={isLoading}
+                    error={error}
+                    onChangeFirstname={onChangeFirstname}
+                    onChangeLastname={onChangeLastname}
+                    readonly={readonly}
+                    onChangeAge={onChangeAge}
+                    onChangeCity={onChangeCity}
+                    onChangeUsername={onChangeUsername}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
+                />
             </div>
         </DynamicModuleLoader>
     );

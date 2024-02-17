@@ -1,13 +1,37 @@
 {
     "posts": [
-        { "id": "1", "title": "a title", "views": 100 },
-        { "id": "2", "title": "another title", "views": 200 },
-        { "id": "3", "title": "another title 2", "views": 200 },
-        { "id": "4", "title": "another title 3", "views": 200 }
+        {
+            "id": "1",
+            "title": "a title",
+            "views": 100
+        },
+        {
+            "id": "2",
+            "title": "another title",
+            "views": 200
+        },
+        {
+            "id": "3",
+            "title": "another title 2",
+            "views": 200
+        },
+        {
+            "id": "4",
+            "title": "another title 3",
+            "views": 200
+        }
     ],
     "comments": [
-        { "id": "1", "text": "a comment about post 1", "postId": "1" },
-        { "id": "2", "text": "another comment about post 1", "postId": "1" }
+        {
+            "id": "1",
+            "text": "a comment about post 1",
+            "postId": "1"
+        },
+        {
+            "id": "2",
+            "text": "another comment about post 1",
+            "postId": "1"
+        }
     ],
     "users": [
         {
@@ -20,8 +44,8 @@
         "first": "Jack",
         "lastname": "Black",
         "age": 33,
-        "currency": "RUB",
-        "country": "Russia",
+        "currency": "USD",
+        "country": "Belarus",
         "city": "Moscow",
         "username": "admin",
         "avatar": "https://wallpapers.com/images/hd/cool-neon-hoodie-profile-picture-vt4w54fxrvenydvu.jpg"
