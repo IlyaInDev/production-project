@@ -17,7 +17,3 @@ type Story = StoryObj<typeof CountrySelect>;
 export const Primary: Story = {
     args: {},
 };
-
-export const Small: Story = {
-    args: {},
-};

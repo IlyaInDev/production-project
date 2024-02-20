@@ -19,7 +19,3 @@ export const Primary: Story = {
 
     },
 };
-
-export const Small: Story = {
-    args: {},
-};
