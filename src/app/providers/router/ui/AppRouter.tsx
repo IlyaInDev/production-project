@@ -26,21 +26,7 @@ export const AppRouter = memo(() => {
     return (
         <Suspense fallback={<PageLoader />}>
             <Routes>
-                {/* @ts-ignore */}
                 {Object.values(RouteConfig).map(renderWithWrapper)}
-                {/* {
-                    routes.map(({ path, element }) => (
-                        <Route
-                            key={path}
-                            path={path}
-                            element={(
-                                <div className="page-wrapper">
-                                    {element}
-                                </div>
-                            )}
-                        />
-                    ))
-                } */}
             </Routes>
         </Suspense>
     );

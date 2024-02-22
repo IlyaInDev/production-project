@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { ChangeEvent, useMemo } from 'react';
+import { ChangeEvent, memo, useMemo } from 'react';
 import cls from './Select.module.scss';
 
 export interface SelectOption {
@@ -17,7 +17,7 @@ interface SelectProps {
     readonly?: boolean;
 }
 
-export const Select = (props: SelectProps) => {
+export const Select = memo((props: SelectProps) => {
     const {
         className,
         label,
@@ -42,7 +42,7 @@ export const Select = (props: SelectProps) => {
             {opt.content}
         </option>
     )), [options]);
-    console.log(readonly);
+
     return (
         <div className={classNames(cls.Wrapper, {}, [className])}>
             {label && (
@@ -62,4 +62,4 @@ export const Select = (props: SelectProps) => {
             </select>
         </div>
     );
-};
+});
