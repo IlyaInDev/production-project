@@ -1,16 +1,19 @@
 const fs = require('fs');
-const jsonServer = require('json-server');
+// const jsonServer = require('json-server');
+const express = require('express');
 const path = require('path');
 const cors = require('cors');
 
-const server = jsonServer.create();
+// const server = jsonServer.create();
+const app = express();
 
-server.use(cors());
+// server.use(cors());
+app.use(cors());
 
 // const router = server.router(path.resolve(__dirname, 'db.json'));
 
 // Нужно для небольшой задержки(имитация реального backend)
-server.use(async (req, res, next) => {
+app.use(async (req, res, next) => {
     await new Promise((res) => {
         setTimeout(res, 800);
     });
@@ -27,12 +30,13 @@ server.use(async (req, res, next) => {
 //     next();
 // });
 
-server.use(jsonServer.defaults({}));
-server.use(jsonServer.bodyParser);
+// app.use(jsonServer.defaults({}));
+app.use(express.json());
+// app.use(jsonServer.bodyParser);
 // server.use(router);
 
 // Эндпоинт для логина
-server.post('/login', (req, res) => {
+app.post('/login', (req, res) => {
     try {
         const { username, password } = req.body;
         const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'utf-8'));
@@ -45,16 +49,14 @@ server.post('/login', (req, res) => {
         if (userFromDb) {
             return res.json(userFromDb);
         }
-        console.log('egrt');
         return res.status(403).json({ message: 'User not found' });
     } catch (e) {
         console.log(e);
-        console.log('dfgfdgdgdgf');
         return res.status(500).json({ message: e.message });
     }
 });
 
-server.get('/posts', (req, res) => {
+app.get('/posts', (req, res) => {
     if (req.headers.authorization) {
         const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'utf-8'));
         const { posts = [] } = db;
@@ -64,7 +66,7 @@ server.get('/posts', (req, res) => {
     return res.status(403).json({ message: 'AUTH ERROR' });
 });
 
-server.get('/profile', (req, res) => {
+app.get('/profile', (req, res) => {
     if (req.headers.authorization) {
         const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'utf-8'));
         const { profile = {} } = db;
@@ -74,14 +76,25 @@ server.get('/profile', (req, res) => {
     return res.status(403).json({ message: 'AUTH ERROR' });
 });
 
-server.put('/profile', (req, res) => {
+app.put('/profile', (req, res) => {
     const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'utf-8'));
     db.profile = req.body;
     fs.writeFileSync(path.resolve(__dirname, 'db.json'), JSON.stringify(db, null, 4));
     res.send(req.body);
 });
 
+app.get('/articles/:id', (req, res) => {
+    if (req.headers.authorization) {
+        const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'utf-8'));
+        const { articles = {} } = db;
+        const article = articles.find((article) => article.id === req.params.id);
+        return res.send(article);
+    }
+
+    return res.status(403).json({ message: 'AUTH ERROR' });
+});
+
 // Запуск сервера
-server.listen(8000, () => {
+app.listen(8000, () => {
     console.log('Server is running on port 8000');
 });
