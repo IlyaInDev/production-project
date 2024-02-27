@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
@@ -10,6 +10,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDitailsReducer } from '../../model/slice/articleDitailsSlice';
 import {
@@ -41,7 +42,6 @@ export const ArticleDitails = memo((props: ArticleDitailsProps) => {
     const { t } = useTranslation('article_ditails');
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getArticleDitailsIsLoading);
-    // const isLoading = true;
     const error = useSelector(getArticleDitailsError);
     const article = useSelector(getArticleDitailsData);
 
@@ -58,11 +58,9 @@ export const ArticleDitails = memo((props: ArticleDitailsProps) => {
         }
     }, []);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(id));
-        }
-    }, [dispatch, id]);
+    useInitialEffect(() => {
+        dispatch(fetchArticleById(id));
+    });
 
     let content;
 

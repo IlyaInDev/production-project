@@ -1,8 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
 import { Select } from './Select';
-import AvatarImg from './storybook.jpg';
 
 const meta: Meta<typeof Select> = {
     title: 'shared/Select',

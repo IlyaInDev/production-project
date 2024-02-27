@@ -15,5 +15,8 @@
     "Выйти": "Log out",
     "Войти": "Sign in",
     "Профиль": "Profile",
-    "Вы ввели неправильный логин или пароль": "You entered wrong username or password"
+    "Вы ввели неправильный логин или пароль": "You entered wrong username or password",
+    "Комментарии отсутствуют": "No comments yet",
+    "Введите текст комментария": "Enter comment text",
+    "Отправить": "Send"
 }
