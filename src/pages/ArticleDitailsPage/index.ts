@@ -1,6 +1,6 @@
 export {
-    ArticleDitailsCommentsSchems,
-} from './model/types/ArticleDitailsCommentsSchems';
+    ArticleDitailsCommentsSchema,
+} from './model/types/ArticleDitailsCommentsSchema';
 
 export {
     ArticleDitailsPageAsync as ArticlesDitailsPage,
