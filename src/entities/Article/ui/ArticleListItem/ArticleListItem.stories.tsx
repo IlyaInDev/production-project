@@ -1,9 +1,25 @@
-import { articleDitailsReducer } from './articleDitailsSlice';
-import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
-import { ArticleDitailsSchema } from '../types/articleDitailsSchema';
-import { Article, ArticleBlockType, ArticleType } from '../types/article';
+import type { Meta, StoryObj } from '@storybook/react';
+import {
+    ArticleType, ArticleBlockType, ArticleView, Article,
+} from 'entities/Article/model/types/article';
+import { ArticleListItem } from './ArticleListItem';
 
-const data: Article = {
+const meta: Meta<typeof ArticleListItem> = {
+    title: 'entities/Article/ArticleListItem',
+    component: ArticleListItem,
+    parameters: {
+        layout: 'padded',
+    },
+    tags: ['autodocs'],
+    argTypes: {
+        // backgroundColor: { control: 'color' },
+    },
+};
+
+export default meta;
+type Story = StoryObj<typeof ArticleListItem>;
+
+const article = {
     id: '1',
     title: 'JavaScript news',
     subtitle: 'Что нового в JavaScript в 2024?',
@@ -13,6 +29,7 @@ const data: Article = {
     user: {
         id: '1',
         username: 'Vasyan',
+        avatar: 'https://wallpapers.com/images/hd/cool-neon-hoodie-profile-picture-vt4w54fxrvenydvu.jpg',
     },
     type: [
         ArticleType.IT,
@@ -74,31 +91,18 @@ const data: Article = {
             title: 'Рисунок 1 - Скриншот сайта',
         },
     ],
+} as Article;
+
+export const ArticleBig: Story = {
+    args: {
+        article,
+        view: ArticleView.BIG,
+    },
 };
 
-describe('profileSlice.test', () => {
-    test('test articleDitails service pending', () => {
-        const state: DeepPartial<ArticleDitailsSchema> = {
-            isLoading: false,
-        };
-        expect(articleDitailsReducer(
-            state as ArticleDitailsSchema,
-            fetchArticleById.pending,
-        )).toEqual({ isLoading: true });
-    });
-
-    test('test articleDitails service fulfilled', () => {
-        const state: DeepPartial<ArticleDitailsSchema> = {
-            data,
-            isLoading: true,
-        };
-        expect(articleDitailsReducer(
-            state as ArticleDitailsSchema,
-            fetchArticleById.fulfilled(data, '1', ''),
-        )).toEqual({
-            isLoading: false,
-            data,
-            error: undefined,
-        });
-    });
-});
+export const ArticleSmall: Story = {
+    args: {
+        article,
+        view: ArticleView.SMALL,
+    },
+};

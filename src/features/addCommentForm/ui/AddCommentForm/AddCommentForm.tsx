@@ -42,8 +42,6 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
         dispatch(addCommentFormActions.setText(''));
     }, [dispatch, onSendComment, text]);
 
-    console.log(`text = ${text}`);
-
     return (
         <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.AddCommentForm, {}, [className])}>

@@ -25,6 +25,10 @@ const article = {
     img: 'https://cdn.eventil.com/uploads/event/header_image/291302/highres_436702483.jpg',
     views: 1020,
     createdAt: '13.01.2024',
+    user: {
+        id: '1',
+        username: 'Vasyan',
+    },
     type: [
         ArticleType.IT,
     ],
