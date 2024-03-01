@@ -33,7 +33,7 @@ const reducers: ReducersList = {
 
 const ArticleDitailsPage = (props: ArticleDitailsPageProps) => {
     const { className } = props;
-    const { t } = useTranslation('article_ditailes');
+    const { t } = useTranslation('article_ditails');
     const { id } = useParams<{ id: string }>();
     const dispatch = useDispatch();
     const comments = useSelector(getArticleComments.selectAll);
