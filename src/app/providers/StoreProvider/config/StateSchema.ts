@@ -7,21 +7,23 @@ import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
+import { UISchema } from 'features/UI';
 import { AddCommentFormSchema } from 'features/addCommentForm';
-import { ArticleDitailsCommentsSchema } from 'pages/ArticleDitailsPage';
+import { ArticleDitailsPageSchema } from 'pages/ArticleDitailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    ui: UISchema;
 
     // Асинхронные редюсеры
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDitailes?: ArticleDitailsSchema;
-    articleDitailsComments?: ArticleDitailsCommentsSchema;
     addCommentForm?: AddCommentFormSchema;
     articlesPage?: ArticlesPageSchema;
+    articleDitailsPage?: ArticleDitailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

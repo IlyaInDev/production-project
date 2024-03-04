@@ -11,7 +11,7 @@ export interface SelectOption {
 interface SelectProps {
     className?: string;
     label?: string;
-    options: SelectOption[];
+    options?: SelectOption[];
     value?: string;
     onChange?: (value: string) => void;
     readonly?: boolean;
@@ -33,7 +33,7 @@ export const Select = memo((props: SelectProps) => {
         onChange?.(e.target.value);
     };
 
-    const optionsList = useMemo(() => options.map((opt) => (
+    const optionsList = useMemo(() => options?.map((opt) => (
         <option
             className={cls.option}
             value={opt.value}
