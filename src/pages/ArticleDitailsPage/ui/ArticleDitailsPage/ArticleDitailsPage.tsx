@@ -29,6 +29,7 @@ import {
 } from '../../model/slice/articleDitailsCommentsSlice';
 import cls from './ArticleDitailsPage.module.scss';
 import { articleDitailsPageReducer } from '../../model/slice';
+import { ArticleDitailsPageHeader } from '../ArticleDitailsPageHeader/ArticleDitailsPageHeader';
 
 interface ArticleDitailsPageProps {
     className?: string;
@@ -47,11 +48,6 @@ const ArticleDitailsPage = (props: ArticleDitailsPageProps) => {
     const recommendations = useSelector(getArticleRecommendations.selectAll);
     const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const navigate = useNavigate();
-
-    const onBackToList = useCallback(() => {
-        navigate(RoutePaths.articles);
-    }, [navigate]);
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -73,9 +69,7 @@ const ArticleDitailsPage = (props: ArticleDitailsPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticleDitailsPage, {}, [className])}>
-                <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-                    {t('Назад к списку')}
-                </Button>
+                <ArticleDitailsPageHeader />
                 <ArticleDitails id={id} />
                 <Text
                     size={TextSize.L}
