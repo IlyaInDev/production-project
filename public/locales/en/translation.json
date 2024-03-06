@@ -19,5 +19,9 @@
     "Комментарии отсутствуют": "No comments yet",
     "Введите текст комментария": "Enter comment text",
     "Отправить": "Send",
-    "Статьи": "Articles"
+    "Статьи": "Articles",
+    "My app": "My app",
+    "Создать статью": "Create article",
+    "Редактирование статьи с id = ": "Editing article with id = ",
+    "Создание статьи": "Article creation"
 }

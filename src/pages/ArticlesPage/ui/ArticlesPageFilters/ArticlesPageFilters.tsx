@@ -27,7 +27,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         className,
     } = props;
 
-    const { t } = useTranslation();
+    const { t } = useTranslation('articles');
     const dispatch = useAppDispatch();
     const view = useSelector(getArticlesPageView);
     const order = useSelector(getArticlesPageOrder);

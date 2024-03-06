@@ -8,5 +8,6 @@
     "просмотрам": "views",
     "возрастанию": "asc",
     "убыванию": "desc",
-    "Статьи не найдены": "articles not found"
+    "Статьи не найдены": "articles not found",
+    "Поиск": "Search"
 }
