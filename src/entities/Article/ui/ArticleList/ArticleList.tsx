@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import {
-    AutoSizer, List, ListRowProps, WindowScroller,
+    List, ListRowProps, WindowScroller,
 } from 'react-virtualized';
 import { PAGE_ID } from 'widgets/Page/Page';
 import { Article, ArticleView } from '../../model/types/article';
@@ -41,7 +41,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const rowCount = isBig ? articles.length : Math.ceil(articles.length / itemsPerRow);
 
     const rowRender = ({
-        index, isScrolling, key, style,
+        index, key, style,
     }: ListRowProps) => {
         const items = [];
         const fromIndex = index * itemsPerRow;
