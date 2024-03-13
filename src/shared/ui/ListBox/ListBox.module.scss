@@ -19,12 +19,24 @@
     min-width: 100%;
 }
 
-.top {
+.optionsTopLeft {
     bottom: 100%;
+    right: 0;
 }
 
-.bottom {
-    bottom: none;
+.optionsTopRight {
+    bottom: 100%;
+    left: 0;
+}
+
+.optionsBottomLeft {
+    top: 100%;
+    right: 0;
+}
+
+.optionsBottomRight {
+    top: 100%;
+    left: 0;
 }
 
 .item {
