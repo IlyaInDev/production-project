@@ -18,8 +18,8 @@ export default {
     // Automatically clear mock calls, instances, contexts and results before every test
     globals: {
         __IS_DEV__: true,
-        __API__: true,
-        __PROJECT__: true,
+        __API__: '',
+        __PROJECT__: 'jest',
     },
     clearMocks: true,
     testEnvironment: 'jsdom',
@@ -56,7 +56,7 @@ export default {
         ['jest-html-reporters', {
             publicPath: '<rootDir>/report/unit',
             filename: 'report.html',
-            openReport: true,
+            // openReport: true,
             inlineSource: true,
         }],
     ],

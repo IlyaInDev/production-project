@@ -33,9 +33,7 @@ export const ArticleDitailsComments = memo((props: ArticleDitailsCommentsProps) 
     }, [dispatch]);
 
     useInitialEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchCommentsByArticleId(id));
-        }
+        dispatch(fetchCommentsByArticleId(id));
     });
 
     return (
