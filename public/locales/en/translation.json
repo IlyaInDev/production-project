@@ -23,5 +23,6 @@
     "My app": "My app",
     "Создать статью": "Create article",
     "Редактирование статьи с id = ": "Editing article with id = ",
-    "Создание статьи": "Article creation"
+    "Создание статьи": "Article creation",
+    "У вас нет доступа к этой странице": "You don't have access to this page"
 }
