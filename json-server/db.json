@@ -844,6 +844,12 @@
       "userId": "1",
       "text": "fgdgd",
       "id": "vcQ7IeY"
+    },
+    {
+      "articleId": "8",
+      "userId": "1",
+      "text": "fdgfdgfd",
+      "id": "Ntsj2Oc"
     }
   ],
   "users": [
@@ -851,23 +857,29 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://wallpapers.com/images/hd/cool-neon-hoodie-profile-picture-vt4w54fxrvenydvu.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://www.english-language.ru/assets/images/articles/programmer.jpg"
     },
     {
-        "id": "3",
-        "username": "manager",
-        "password": "123",
-        "roles": ["MANAGER"],
-        "avatar": "https://www.english-language.ru/assets/images/articles/programmer.jpg"
-      }
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ],
+      "avatar": "https://www.english-language.ru/assets/images/articles/programmer.jpg"
+    }
   ],
   "profile": [
     {

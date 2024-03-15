@@ -15,7 +15,38 @@ const meta: Meta<typeof ArticleDitailsPageHeader> = {
 export default meta;
 type Story = StoryObj<typeof ArticleDitailsPageHeader>;
 
-export const Normal: Story = {
+export const CanEdit: Story = {
     args: {},
-    decorators: [StoreDecorator({})],
+    decorators: [StoreDecorator({
+        user: {
+            authData: {
+                id: '1',
+            },
+        },
+        articleDitailes: {
+            data: {
+                user: {
+                    id: '1',
+                },
+            },
+        },
+    })],
+};
+
+export const CannotEdit: Story = {
+    args: {},
+    decorators: [StoreDecorator({
+        user: {
+            authData: {
+                id: '1',
+            },
+        },
+        articleDitailes: {
+            data: {
+                user: {
+                    id: '2',
+                },
+            },
+        },
+    })],
 };

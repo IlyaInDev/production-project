@@ -17,7 +17,36 @@ const meta: Meta<typeof ArticleDitailsComments> = {
 export default meta;
 type Story = StoryObj<typeof ArticleDitailsComments>;
 
-export const Primary: Story = {
+export const WithComments: Story = {
+    args: {},
+    decorators: [StoreDecorator({
+        articleDitailsPage: {
+            comments: {
+                entities: {
+                    1: {
+                        id: '1',
+                        user: {
+                            id: '1',
+                            username: 'Vasyan',
+                        },
+                        text: 'Such a cool article!',
+                    },
+                    2: {
+                        id: '2',
+                        user: {
+                            id: '4',
+                            username: 'Genadii',
+                        },
+                        text: 'So informative!',
+                    },
+                },
+                ids: ['1', '2'],
+            },
+        },
+    })],
+};
+
+export const WithoutComments: Story = {
     args: {},
     decorators: [StoreDecorator({})],
 };
