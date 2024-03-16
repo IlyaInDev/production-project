@@ -3,7 +3,7 @@ export {
     userActions,
 } from './modal/slice/userSlice';
 
-export {
+export type {
     User,
     UserSchema,
 } from './modal/types/user';

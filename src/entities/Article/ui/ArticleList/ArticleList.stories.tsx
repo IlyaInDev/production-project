@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { ArticleBlockType, ArticleType, ArticleView } from '../../model/consts/articleConsts';
 import {
-    Article, ArticleBlockType, ArticleType, ArticleView,
+    Article,
 } from '../../model/types/article';
 import { ArticleList } from './ArticleList';
 
