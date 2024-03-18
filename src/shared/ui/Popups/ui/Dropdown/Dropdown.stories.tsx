@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 import { Dropdown } from './Dropdown';
-import { Button } from '../Button/Button';
+import { Button } from '../../../Button/Button';
 
 const meta: Meta<typeof Dropdown> = {
-    title: 'shared/Dropdown',
+    title: 'shared/Popups/Dropdown',
     component: Dropdown,
     parameters: {
         layout: 'padded',

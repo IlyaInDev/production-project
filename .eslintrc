@@ -48,7 +48,7 @@
             {
                 "markupOnly": true,
                 "ignoreAttribute": [ 
-                    "as", "role", "data-testid", "to", "name", "target", "justify", "align", "direction", "gap" 
+                    "border", "as", "role", "data-testid", "to", "name", "target", "justify", "align", "direction", "gap" 
                 ]
             }
         ],
