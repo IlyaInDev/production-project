@@ -125,3 +125,10 @@ export const Disabled: Story = {
         disabled: true,
     },
 };
+
+export const FullWidth: Story = {
+    args: {
+        children: 'Text',
+        fullWidth: true,
+    },
+};
