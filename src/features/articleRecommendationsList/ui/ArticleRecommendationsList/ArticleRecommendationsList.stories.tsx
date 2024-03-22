@@ -74,7 +74,4 @@ type Story = StoryObj<typeof ArticleRecommendationsList>;
 export const Primary: Story = {
     args: {},
     decorators: [StoreDecorator({})],
-    parameters: {
-
-    },
 };

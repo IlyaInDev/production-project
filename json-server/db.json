@@ -1,38 +1,38 @@
 {
-    "notifications": [
-        {
-          "id": "1",
-          "title": "Уведомление 1",
-          "description": "Произошло какое-то событие",
-          "userId": "1"
-        },
-        {
-          "id": "2",
-          "title": "Уведомление 2",
-          "description": "Произошло какое-то событие",
-          "userId": "1",
-          "href": "http://localhost:3000/admin"
-        },
-        {
-          "id": "3",
-          "title": "Уведомление 3",
-          "description": "Произошло какое-то событие",
-          "userId": "1",
-          "href": "http://localhost:3000/admin"
-        },
-        {
-          "id": "4",
-          "title": "Уведомление 4",
-          "description": "Произошло какое-то событие",
-          "userId": "1"
-        },
-        {
-          "id": "5",
-          "title": "Уведомление 1",
-          "description": "Произошло какое-то событие",
-          "userId": "2"
-        }
-    ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Уведомление 2",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление 3",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "4",
+      "title": "Уведомление 4",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "2"
+    }
+  ],
   "posts": [
     {
       "id": "1",
@@ -943,6 +943,63 @@
       "city": "Minsk",
       "username": "lodka",
       "avatar": "https://www.english-language.ru/assets/images/articles/programmer.jpg"
+    },
+    {
+      "id": "3",
+      "first": "Bob",
+      "lastname": "Grey",
+      "age": 26,
+      "currency": "USD",
+      "country": "Belarus",
+      "city": "Minsk",
+      "username": "lodka",
+      "avatar": "https://www.english-language.ru/assets/images/articles/programmer.jpg"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "userId": "1",
+      "feedback": "Хорошая статья",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "userId": "1",
+      "feedback": "Хорошая статья",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 5,
+      "feedback": "",
+      "id": "grgKao6"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "userId": "1",
+      "feedback": "Хорошая статья",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "userId": "1",
+      "feedback": "Хорошая статья",
+      "profileId": "2"
+    },
+    {
+      "profileId": "3",
+      "rate": 4,
+      "userId": "1",
+      "feedback": "dsfdsgdsgd",
+      "id": "3tjl6Hs"
     }
   ]
 }
