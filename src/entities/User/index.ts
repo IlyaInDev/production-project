@@ -17,3 +17,5 @@ export {
 } from './modal/selectors/getUserInited/getUserInited';
 
 export { isUserAdmin, isUserManager, getUserRoles } from './modal/selectors/rolesSelector';
+
+export { UserRole } from './modal/consts/userConsts';

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { UserRole } from '@/entities/User/modal/consts/userConsts';
+import { UserRole } from '@/entities/User';
 import avatar from '@/shared/assets/tests/avatar.jpg';
 import { AvatarDropdown } from './AvatarDropdown';
 

@@ -1,3 +1,4 @@
+/* eslint-disable pathckeck-plugin/public-api-imports */
 import { StoryFn } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { articleDitailsReducer } from '@/entities/Article/model/slice/articleDitailsSlice';
