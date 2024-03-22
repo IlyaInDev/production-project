@@ -62,7 +62,7 @@
         "no-undef": "off",
         "react/no-array-index-key": "off",
         "arrow-body-style": "off",
-        "pathckeck-plugin/path-checker": "error",
+        "pathckeck-plugin/path-checker": ["error", {"alias": "@"}],
         "react/jsx-no-useless-fragment": "off"
     },
     "globals": {
