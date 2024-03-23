@@ -1,11 +1,10 @@
-/* eslint-disable pathckeck-plugin/public-api-imports */
 import { StoryFn } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { articleDitailsReducer } from '@/entities/Article/model/slice/articleDitailsSlice';
-import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
-import { addCommentFormReducer } from '@/features/addCommentForm/model/slice/addCommentFormSlice';
-import { profileReducer } from '@/features/editableProfileCard/model/slice/profileSlice';
-import { articleDitailsPageReducer } from '@/pages/ArticleDitailsPage/model/slice';
+import { articleDitailsReducer } from '@/entities/Article/testing';
+import { loginReducer } from '@/features/AuthByUsername/testing';
+import { addCommentFormReducer } from '@/features/addCommentForm/testing';
+import { profileReducer } from '@/features/editableProfileCard/testing';
+import { articleDitailsPageReducer } from '@/pages/ArticleDitailsPage/testing';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 const defaultAsyncReducers: ReducersList = {
