@@ -3,17 +3,17 @@ import { memo, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { LoginModal } from '@/features/AuthByUsername';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import {
     getUserAuthData,
 } from '@/entities/User';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
+import { Text, TextTheme } from '@/shared/ui/Text';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { RoutePaths } from '@/shared/const/router';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { Drawer } from '@/shared/ui/Drawer';
 import { NotificationList } from '@/entities/Notification';
 import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 import cls from './Navbar.module.scss';
