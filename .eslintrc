@@ -22,7 +22,8 @@
         "@typescript-eslint",
         "i18next",
         "react-hooks",
-        "pathckeck-plugin"
+        "pathckeck-plugin",
+        "unused-imports"
     ],
     "rules": {
         "react/jsx-indent": [ 2, 4 ],
@@ -71,7 +72,8 @@
             "alias": "@",
             "ignoreImportPatterns": ["**/StoreProvider", "**/testing"]
         }],
-        "react/jsx-no-useless-fragment": "off"
+        "react/jsx-no-useless-fragment": "off",
+        "unused-imports/no-unused-imports": "error"
     },
     "globals": {
         "__IS_DEV__": true,

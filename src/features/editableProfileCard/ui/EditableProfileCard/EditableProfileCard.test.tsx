@@ -4,7 +4,6 @@ import { ComponentRenderOptions, componentRender } from '@/shared/lib/tests/comp
 import { Profile } from '@/entities/Profile';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
-import { $api } from '@/shared/api/api';
 import { profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCard } from './EditableProfileCard';
 

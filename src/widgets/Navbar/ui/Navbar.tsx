@@ -13,9 +13,6 @@ import { RoutePaths } from '@/shared/const/router';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
-import { Drawer } from '@/shared/ui/Drawer';
-import { NotificationList } from '@/entities/Notification';
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
