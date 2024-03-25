@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ArticleTabTypes } from './ArticleTabTypes';
+import { ArticleSortSelector } from './ArticleSortSelector';
 
-const meta: Meta<typeof ArticleTabTypes> = {
-    title: 'entities/Article/ArticleTabTypes',
-    component: ArticleTabTypes,
+const meta: Meta<typeof ArticleSortSelector> = {
+    title: 'features/ArticleSortSelector',
+    component: ArticleSortSelector,
     parameters: {
         layout: 'padded',
     },
@@ -14,7 +14,7 @@ const meta: Meta<typeof ArticleTabTypes> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticleTabTypes>;
+type Story = StoryObj<typeof ArticleSortSelector>;
 
 export const Primary: Story = {
     args: {},

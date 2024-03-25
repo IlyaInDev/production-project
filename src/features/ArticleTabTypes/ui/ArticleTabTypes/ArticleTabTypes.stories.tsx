@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ArticleViewSelector } from './ArticleViewSelector';
+import { ArticleTabTypes } from './ArticleTabTypes';
 
-const meta: Meta<typeof ArticleViewSelector> = {
-    title: 'entities/Article/ArticleViewSelector',
-    component: ArticleViewSelector,
+const meta: Meta<typeof ArticleTabTypes> = {
+    title: 'features/ArticleTabTypes',
+    component: ArticleTabTypes,
     parameters: {
         layout: 'padded',
     },
@@ -14,7 +14,7 @@ const meta: Meta<typeof ArticleViewSelector> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticleViewSelector>;
+type Story = StoryObj<typeof ArticleTabTypes>;
 
 export const Primary: Story = {
     args: {},
