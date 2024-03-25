@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { RoutePaths } from '@/shared/const/router';
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getArticleDitailsData } from '@/entities/Article';
@@ -21,12 +21,14 @@ export const ArticleDitailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
     const article = useSelector(getArticleDitailsData);
 
     const onBackToList = useCallback(() => {
-        navigate(RoutePaths.articles);
+        navigate(getRouteArticles());
     }, [navigate]);
 
     const onEditArticle = useCallback(() => {
-        navigate(`${RoutePaths.article_ditailes}${article?.id}/edit`);
-    }, [article?.id, navigate]);
+        if (article) {
+            navigate(getRouteArticleEdit(article?.id));
+        }
+    }, [article, navigate]);
 
     return (
         <HStack max justify="between" className={classNames('', {}, [className])}>
