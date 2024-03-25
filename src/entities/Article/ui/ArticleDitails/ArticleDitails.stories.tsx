@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticleBlockType, ArticleType } from '../../model/consts/articleConsts';
 import { ArticleDitails } from './ArticleDitails';
+import ArticleAvatar from '@/shared/assets/tests/article-avatar.jpg';
+import ArticleImage from '@/shared/assets/tests/article-image.jpeg';
 
 const meta: Meta<typeof ArticleDitails> = {
     title: 'entities/Article/ArticleDitails',
@@ -22,7 +24,7 @@ const article = {
     id: '1',
     title: 'JavaScript news',
     subtitle: 'Что нового в JavaScript в 2024?',
-    img: 'https://cdn.eventil.com/uploads/event/header_image/291302/highres_436702483.jpg',
+    img: ArticleAvatar,
     views: 1020,
     createdAt: '13.01.2024',
     user: {
@@ -60,7 +62,7 @@ const article = {
         {
             id: '2',
             type: ArticleBlockType.IMAGE,
-            src: 'https://habrastorage.org/r/w1560/getpro/habr/upload_files/111/81b/7fd/11181b7fdace85437dd164a9af39b786.jpeg',
+            src: ArticleImage,
             title: 'Рисунок 1 - Скриншот сайта',
         },
         {
@@ -85,7 +87,7 @@ const article = {
         {
             id: '8',
             type: ArticleBlockType.IMAGE,
-            src: 'https://habrastorage.org/r/w1560/getpro/habr/upload_files/111/81b/7fd/11181b7fdace85437dd164a9af39b786.jpeg',
+            src: ArticleImage,
             title: 'Рисунок 1 - Скриншот сайта',
         },
     ],

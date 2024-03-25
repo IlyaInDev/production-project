@@ -15,6 +15,10 @@ const ProfilePage = (props: ProfilePageProps) => {
     const { t } = useTranslation('profile');
     const { id } = useParams<{ id: string }>();
 
+    if (!id) {
+        return null;
+    }
+
     return (
         <Page className={classNames('', {}, [className])}>
             <VStack gap="16" max>
