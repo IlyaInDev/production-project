@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import avatar from '@/shared/assets/tests/avatar.jpg';
+import UserAvatar from '@/shared/assets/tests/avatar.jpg';
 import { ProfileCard } from './ProfileCard';
 
 const meta: Meta<typeof ProfileCard> = {
@@ -26,7 +26,7 @@ export const Primary: Story = {
             first: 'Jack',
             lastname: 'Black',
             age: 33,
-            avatar,
+            avatar: UserAvatar,
             city: 'Moscow',
             country: Country.Russia,
             currency: Currency.RUB,
