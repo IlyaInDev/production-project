@@ -32,7 +32,7 @@ describe('app/router/AppRputer', () => {
         expect(page).toBeInTheDocument();
     });
 
-    test('Доступ авторизованному пользователю', async () => {
+    test('Доступ к закрытой странице для авторизованного пользователя', async () => {
         componentRender(<AppRouter />, {
             route: getRouteProfile('1'),
             initialState: {

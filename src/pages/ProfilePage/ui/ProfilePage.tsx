@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/Stack';
-import { EditableProfileCard } from '@/features/editableProfileCard';
 import { ProfileRating } from '@/features/profileRating';
+import { EditableProfileCard } from '@/features/editableProfileCard';
 
 interface ProfilePageProps {
     className?: string;
