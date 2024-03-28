@@ -4,4 +4,4 @@ node_modules
 .vscode
 .loki/report.html
 .loki/report.json
-report
+report/unit

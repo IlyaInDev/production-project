@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { UserRole } from '@/entities/User';
-import avatar from '@/shared/assets/tests/avatar.jpg';
 import { AvatarDropdown } from './AvatarDropdown';
 
 const meta: Meta<typeof AvatarDropdown> = {
@@ -30,7 +29,7 @@ export const Admin: Story = {
                 id: '1',
                 username: 'Bob',
                 roles: [UserRole.ADMIN],
-                avatar,
+                avatar: '/avatar.jpg',
             },
         },
     })],
@@ -44,7 +43,7 @@ export const User: Story = {
                 id: '1',
                 username: 'Bob',
                 roles: [UserRole.USER],
-                avatar,
+                avatar: '/avatar.jpg',
             },
         },
     })],

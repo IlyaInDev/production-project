@@ -4,9 +4,6 @@ import {
 } from '../../model/types/article';
 import { ArticleType, ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 import { ArticleListItem } from './ArticleListItem';
-import UserAvatar from '@/shared/assets/tests/avatar.jpg';
-import ArticleAvatar from '@/shared/assets/tests/article-avatar.jpg';
-import ArticleImage from '@/shared/assets/tests/article-image.jpeg';
 
 const meta: Meta<typeof ArticleListItem> = {
     title: 'entities/Article/ArticleListItem',
@@ -27,13 +24,13 @@ const article = {
     id: '1',
     title: 'JavaScript news',
     subtitle: 'Что нового в JavaScript в 2024?',
-    img: ArticleAvatar,
+    img: 'article-avatar.jpg',
     views: 1020,
     createdAt: '13.01.2024',
     user: {
         id: '1',
         username: 'Vasyan',
-        avatar: UserAvatar,
+        avatar: '/avatar.jpg',
     },
     type: [
         ArticleType.IT,
@@ -66,7 +63,7 @@ const article = {
         {
             id: '2',
             type: ArticleBlockType.IMAGE,
-            src: ArticleImage,
+            src: 'article-image.jpeg',
             title: 'Рисунок 1 - Скриншот сайта',
         },
         {
@@ -91,7 +88,7 @@ const article = {
         {
             id: '8',
             type: ArticleBlockType.IMAGE,
-            src: ArticleImage,
+            src: 'article-image.jpeg',
             title: 'Рисунок 1 - Скриншот сайта',
         },
     ],

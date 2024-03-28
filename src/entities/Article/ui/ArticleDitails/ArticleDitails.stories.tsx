@@ -2,8 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticleBlockType, ArticleType } from '../../model/consts/articleConsts';
 import { ArticleDitails } from './ArticleDitails';
-import ArticleAvatar from '@/shared/assets/tests/article-avatar.jpg';
-import ArticleImage from '@/shared/assets/tests/article-image.jpeg';
 
 const meta: Meta<typeof ArticleDitails> = {
     title: 'entities/Article/ArticleDitails',
@@ -24,7 +22,7 @@ const article = {
     id: '1',
     title: 'JavaScript news',
     subtitle: 'Что нового в JavaScript в 2024?',
-    img: ArticleAvatar,
+    img: '/article-avatar.jpg',
     views: 1020,
     createdAt: '13.01.2024',
     user: {
@@ -62,7 +60,7 @@ const article = {
         {
             id: '2',
             type: ArticleBlockType.IMAGE,
-            src: ArticleImage,
+            src: '/article-image.jpeg',
             title: 'Рисунок 1 - Скриншот сайта',
         },
         {
@@ -87,7 +85,7 @@ const article = {
         {
             id: '8',
             type: ArticleBlockType.IMAGE,
-            src: ArticleImage,
+            src: '/article-image.jpeg',
             title: 'Рисунок 1 - Скриншот сайта',
         },
     ],

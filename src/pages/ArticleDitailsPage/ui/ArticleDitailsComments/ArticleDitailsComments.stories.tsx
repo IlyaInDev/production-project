@@ -28,6 +28,7 @@ export const WithComments: Story = {
                         user: {
                             id: '1',
                             username: 'Vasyan',
+                            avatar: '/avatar.jpg',
                         },
                         text: 'Such a cool article!',
                     },
@@ -36,6 +37,7 @@ export const WithComments: Story = {
                         user: {
                             id: '4',
                             username: 'Genadii',
+                            avatar: '/avatar.jpg',
                         },
                         text: 'So informative!',
                     },
