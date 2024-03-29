@@ -919,7 +919,16 @@
         "MANAGER"
       ],
       "avatar": "https://www.english-language.ru/assets/images/articles/programmer.jpg"
-    }
+    },
+    {
+        "id": "4",
+        "username": "testuser",
+        "password": "123",
+        "roles": [
+          "ADMIN"
+        ],
+        "avatar": "https://wallpapers.com/images/hd/cool-neon-hoodie-profile-picture-vt4w54fxrvenydvu.jpg"
+      }
   ],
   "profile": [
     {
