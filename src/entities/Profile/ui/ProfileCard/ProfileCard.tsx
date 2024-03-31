@@ -71,7 +71,12 @@ export const ProfileCard = (props: ProfileCardProps) => {
     };
 
     return (
-        <VStack max gap="8" className={classNames(cls.ProfileCard, mods, [className])}>
+        <VStack
+            data-testid="ProfileCard"
+            max
+            gap="8"
+            className={classNames(cls.ProfileCard, mods, [className])}
+        >
             {data?.avatar && (
                 <HStack max justify="center" className={cls.avatarWrapper}>
                     <Avatar src={data?.avatar} />
@@ -99,6 +104,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={cls.input}
                 onChange={onChangeAge}
                 readonly={readonly}
+                data-testid="ProfileCard.age"
             />
             <Input
                 value={data?.city}

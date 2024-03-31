@@ -792,6 +792,32 @@
           ]
         }
       ]
+    },
+    {
+      "title": "All about http protocol",
+      "subtitle": "Использование ruby для написания js loader'ов",
+      "img": "https://i2.wp.com/miro.medium.com/1*K2SLalne3k7d1m8oB9xN-Q.jpeg",
+      "views": 10230,
+      "createdAt": "13.01.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "a9BSv8i"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "Использование ruby для написания js loader'ов",
+      "img": "https://i2.wp.com/miro.medium.com/1*K2SLalne3k7d1m8oB9xN-Q.jpeg",
+      "views": 10230,
+      "createdAt": "13.01.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "pc6IjLG"
     }
   ],
   "comments": [
@@ -921,14 +947,14 @@
       "avatar": "https://www.english-language.ru/assets/images/articles/programmer.jpg"
     },
     {
-        "id": "4",
-        "username": "testuser",
-        "password": "123",
-        "roles": [
-          "ADMIN"
-        ],
-        "avatar": "https://wallpapers.com/images/hd/cool-neon-hoodie-profile-picture-vt4w54fxrvenydvu.jpg"
-      }
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://wallpapers.com/images/hd/cool-neon-hoodie-profile-picture-vt4w54fxrvenydvu.jpg"
+    }
   ],
   "profile": [
     {
@@ -962,6 +988,17 @@
       "country": "Belarus",
       "city": "Minsk",
       "username": "lodka",
+      "avatar": "https://www.english-language.ru/assets/images/articles/programmer.jpg"
+    },
+    {
+      "id": "4",
+      "first": "Test",
+      "lastname": "User",
+      "age": 26,
+      "currency": "USD",
+      "country": "Belarus",
+      "city": "Minsk",
+      "username": "testuser",
       "avatar": "https://www.english-language.ru/assets/images/articles/programmer.jpg"
     }
   ],

@@ -93,7 +93,7 @@ export const ArticleDitails = memo((props: ArticleDitailsProps) => {
                         src={article?.img}
                     />
                 </HStack>
-                <VStack gap="4">
+                <VStack gap="4" data-testid="ArticleDitails.Info">
                     <Text
                         title={article?.title}
                         text={article?.subtitle}
