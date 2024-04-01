@@ -1,0 +1,11 @@
+{
+    "id": "1",
+    "first": "Test",
+    "lastname": "User",
+    "age": 26,
+    "currency": "USD",
+    "country": "Belarus",
+    "city": "Minsk",
+    "username": "testuser",
+    "avatar": "https://www.english-language.ru/assets/images/articles/programmer.jpg"
+}
