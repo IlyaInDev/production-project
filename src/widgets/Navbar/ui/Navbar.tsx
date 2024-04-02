@@ -4,9 +4,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { LoginModal } from '@/features/AuthByUsername';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import {
-    getUserAuthData,
-} from '@/entities/User';
+import { getUserAuthData } from '@/entities/User';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { getRouteArticleCreate } from '@/shared/const/router';
@@ -64,7 +62,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             >
                 {t('Войти')}
             </Button>
-            {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+            {isAuthModal && (
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            )}
         </header>
     );
 });

@@ -1,6 +1,4 @@
-import {
-    HTMLAttributes, ReactNode, memo,
-} from 'react';
+import { HTMLAttributes, ReactNode, memo } from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Flex.module.scss';
 

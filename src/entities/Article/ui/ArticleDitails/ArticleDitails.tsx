@@ -2,7 +2,10 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
@@ -35,10 +38,7 @@ const reducers: ReducersList = {
 };
 
 export const ArticleDitails = memo((props: ArticleDitailsProps) => {
-    const {
-        className,
-        id,
-    } = props;
+    const { className, id } = props;
 
     const { t } = useTranslation('article_ditails');
     const dispatch = useAppDispatch();
@@ -48,14 +48,20 @@ export const ArticleDitails = memo((props: ArticleDitailsProps) => {
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
-        case ArticleBlockType.CODE:
-            return <ArticleCodeBlockComponent block={block} key={block.id} />;
-        case ArticleBlockType.IMAGE:
-            return <ArticleImageBlockComponent block={block} key={block.id} />;
-        case ArticleBlockType.TEXT:
-            return <ArticleTextBlockComponent block={block} key={block.id} />;
-        default:
-            return null;
+            case ArticleBlockType.CODE:
+                return (
+                    <ArticleCodeBlockComponent block={block} key={block.id} />
+                );
+            case ArticleBlockType.IMAGE:
+                return (
+                    <ArticleImageBlockComponent block={block} key={block.id} />
+                );
+            case ArticleBlockType.TEXT:
+                return (
+                    <ArticleTextBlockComponent block={block} key={block.id} />
+                );
+            default:
+                return null;
         }
     }, []);
 
@@ -88,10 +94,7 @@ export const ArticleDitails = memo((props: ArticleDitailsProps) => {
         content = (
             <>
                 <HStack max justify="center">
-                    <Avatar
-                        size={200}
-                        src={article?.img}
-                    />
+                    <Avatar size={200} src={article?.img} />
                 </HStack>
                 <VStack gap="4" data-testid="ArticleDitails.Info">
                     <Text

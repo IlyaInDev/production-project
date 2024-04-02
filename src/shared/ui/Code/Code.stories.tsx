@@ -18,15 +18,16 @@ type Story = StoryObj<typeof Code>;
 
 export const Primary: Story = {
     args: {
-        text: 'const meta: Meta<typeof Code> = {\n'
-            + '    title: \'shared/Code\',\n'
-            + '    component: Code,\n'
-            + '    parameters: {\n'
-            + '        layout: \'padded\',\n'
-            + '    },\n'
-            + '    tags: [\'autodocs\'],\n'
-            + '    argTypes: {},\n'
-            + '};',
+        text:
+            'const meta: Meta<typeof Code> = {\n' +
+            "    title: 'shared/Code',\n" +
+            '    component: Code,\n' +
+            '    parameters: {\n' +
+            "        layout: 'padded',\n" +
+            '    },\n' +
+            "    tags: ['autodocs'],\n" +
+            '    argTypes: {},\n' +
+            '};',
     },
 };
 

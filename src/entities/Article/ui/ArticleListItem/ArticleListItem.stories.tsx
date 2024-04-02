@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Article } from '../../model/types/article';
 import {
-    Article,
-} from '../../model/types/article';
-import { ArticleType, ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
+    ArticleType,
+    ArticleBlockType,
+    ArticleView,
+} from '../../model/consts/articleConsts';
 import { ArticleListItem } from './ArticleListItem';
 
 const meta: Meta<typeof ArticleListItem> = {
@@ -32,9 +34,7 @@ const article = {
         username: 'Vasyan',
         avatar: '/avatar.jpg',
     },
-    type: [
-        ArticleType.IT,
-    ],
+    type: [ArticleType.IT],
     blocks: [
         {
             id: '1',

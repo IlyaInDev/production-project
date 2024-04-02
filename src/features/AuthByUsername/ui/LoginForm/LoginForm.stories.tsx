@@ -21,9 +21,11 @@ type Story = StoryObj<typeof LoginForm>;
 
 export const Primary: Story = {
     args: {},
-    decorators: [StoreDecorator({
-        loginForm: { username: 'John Doe', password: 'GIO' },
-    })],
+    decorators: [
+        StoreDecorator({
+            loginForm: { username: 'John Doe', password: 'GIO' },
+        }),
+    ],
 };
 
 export const Secondary: Story = {
@@ -38,14 +40,22 @@ export const Secondary: Story = {
 
 export const WithError: Story = {
     args: {},
-    decorators: [StoreDecorator({
-        loginForm: { username: 'John Doe', password: 'GIO', error: 'ERROR' },
-    })],
+    decorators: [
+        StoreDecorator({
+            loginForm: {
+                username: 'John Doe',
+                password: 'GIO',
+                error: 'ERROR',
+            },
+        }),
+    ],
 };
 
 export const Loadind: Story = {
     args: {},
-    decorators: [StoreDecorator({
-        loginForm: { isLoading: true },
-    })],
+    decorators: [
+        StoreDecorator({
+            loginForm: { isLoading: true },
+        }),
+    ],
 };

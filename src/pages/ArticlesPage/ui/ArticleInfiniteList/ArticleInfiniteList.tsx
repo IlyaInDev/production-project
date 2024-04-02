@@ -4,18 +4,18 @@ import { useSelector } from 'react-redux';
 import { ArticleList } from '@/entities/Article';
 import { Text } from '@/shared/ui/Text';
 import {
-    getArticlesPageIsLoading, getArticlesPageView, getArticlesPageError,
+    getArticlesPageIsLoading,
+    getArticlesPageView,
+    getArticlesPageError,
 } from '../../model/selectors/articlesPageSelectors';
 import { getArticles } from '../../model/slices/articlesPageSlice';
 
 interface ArticleInfiniteListProps {
-    className ?: string;
+    className?: string;
 }
 
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const { t } = useTranslation();
     const articles = useSelector(getArticles.selectAll);

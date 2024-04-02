@@ -28,7 +28,9 @@ export const Dark: Story = {
 };
 
 export const AuthNavbar: Story = {
-    decorators: [StoreDecorator({
-        user: { authData: { avatar: '/avatar.jpg' } },
-    })],
+    decorators: [
+        StoreDecorator({
+            user: { authData: { avatar: '/avatar.jpg' } },
+        }),
+    ],
 };

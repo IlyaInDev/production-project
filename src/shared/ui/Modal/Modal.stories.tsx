@@ -21,14 +21,16 @@ type Story = StoryObj<typeof Modal>;
 export const Primary: Story = {
     args: {
         isOpen: true,
-        children: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio excepturi commodi quae! Maxime blanditiis sed enim quibusdam sunt dignissimos quidem.',
+        children:
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio excepturi commodi quae! Maxime blanditiis sed enim quibusdam sunt dignissimos quidem.',
     },
 };
 
 export const Dark: Story = {
     args: {
         isOpen: true,
-        children: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio excepturi commodi quae! Maxime blanditiis sed enim quibusdam sunt dignissimos quidem.',
+        children:
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio excepturi commodi quae! Maxime blanditiis sed enim quibusdam sunt dignissimos quidem.',
     },
     decorators: [ThemeDecorator(Theme.DARK)],
 };

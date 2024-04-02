@@ -11,7 +11,7 @@ import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
 import { Drawer } from '@/shared/ui/Drawer';
 
 interface RatingCardProps {
-    className ?: string;
+    className?: string;
     title?: string;
     feedbackTitle?: string;
     hasFeedback?: boolean;
@@ -36,14 +36,17 @@ export const RatingCard = memo((props: RatingCardProps) => {
     const [feedback, setFeedback] = useState('');
 
     const { t } = useTranslation();
-    const onSelectStars = useCallback((selectedStarsCount: number) => {
-        setStarsCount(selectedStarsCount);
-        if (hasFeedback) {
-            setIsModalOpen(true);
-        } else {
-            onAccept?.(selectedStarsCount);
-        }
-    }, [hasFeedback, onAccept]);
+    const onSelectStars = useCallback(
+        (selectedStarsCount: number) => {
+            setStarsCount(selectedStarsCount);
+            if (hasFeedback) {
+                setIsModalOpen(true);
+            } else {
+                onAccept?.(selectedStarsCount);
+            }
+        },
+        [hasFeedback, onAccept],
+    );
 
     const acceptHandle = useCallback(() => {
         setIsModalOpen(false);
@@ -71,7 +74,11 @@ export const RatingCard = memo((props: RatingCardProps) => {
         <Card className={className} max data-testid="RatingCard">
             <VStack align="center" gap="8" max>
                 <Text title={starsCount ? t('Спасибо за оценку!') : title} />
-                <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
+                <StarRating
+                    selectedStars={starsCount}
+                    size={40}
+                    onSelect={onSelectStars}
+                />
             </VStack>
 
             <BrowserView>
@@ -100,7 +107,11 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 <Drawer isOpen={isModalOpen} onClose={cancelHandle}>
                     <VStack max gap="16">
                         {modalContent}
-                        <Button fullWidth onClick={acceptHandle} size={ButtonSize.L}>
+                        <Button
+                            fullWidth
+                            onClick={acceptHandle}
+                            size={ButtonSize.L}
+                        >
                             {t('Отправить')}
                         </Button>
                     </VStack>

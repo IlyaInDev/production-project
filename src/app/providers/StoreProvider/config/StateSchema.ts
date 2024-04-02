@@ -1,5 +1,9 @@
 import {
-    AnyAction, ReducersMapObject, Reducer, CombinedState, EnhancedStore,
+    AnyAction,
+    ReducersMapObject,
+    Reducer,
+    CombinedState,
+    EnhancedStore,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { ArticleDitailsSchema } from '@/entities/Article';
@@ -17,7 +21,7 @@ export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
     ui: UISchema;
-    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>,
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // Асинхронные редюсеры
     loginForm?: LoginSchema;
@@ -33,7 +37,10 @@ export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
-    reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
+    reduce: (
+        state: StateSchema,
+        action: AnyAction,
+    ) => CombinedState<StateSchema>;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
     getMountedReducers: () => MountedReducers;

@@ -14,40 +14,39 @@ import { getArticleComments } from '../../model/slice/articleDitailsCommentsSlic
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface ArticleDitailsCommentsProps {
-    className ?: string;
+    className?: string;
     id?: string;
 }
 
-export const ArticleDitailsComments = memo((props: ArticleDitailsCommentsProps) => {
-    const {
-        className,
-        id,
-    } = props;
+export const ArticleDitailsComments = memo(
+    (props: ArticleDitailsCommentsProps) => {
+        const { className, id } = props;
 
-    const { t } = useTranslation();
-    const comments = useSelector(getArticleComments.selectAll);
-    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const dispatch = useAppDispatch();
+        const { t } = useTranslation();
+        const comments = useSelector(getArticleComments.selectAll);
+        const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+        const dispatch = useAppDispatch();
 
-    const onSendComment = useCallback((text: string) => {
-        dispatch(addCommentForArticle(text));
-    }, [dispatch]);
+        const onSendComment = useCallback(
+            (text: string) => {
+                dispatch(addCommentForArticle(text));
+            },
+            [dispatch],
+        );
 
-    useInitialEffect(() => {
-        dispatch(fetchCommentsByArticleId(id));
-    });
+        useInitialEffect(() => {
+            dispatch(fetchCommentsByArticleId(id));
+        });
 
-    return (
-        <VStack gap="16" max className={classNames('', {}, [className])}>
-            <Text
-                size={TextSize.L}
-                title={t('Комментарии')}
-            />
-            <AddCommentForm onSendComment={onSendComment} />
-            <CommentList
-                isLoading={commentsIsLoading}
-                comments={comments}
-            />
-        </VStack>
-    );
-});
+        return (
+            <VStack gap="16" max className={classNames('', {}, [className])}>
+                <Text size={TextSize.L} title={t('Комментарии')} />
+                <AddCommentForm onSendComment={onSendComment} />
+                <CommentList
+                    isLoading={commentsIsLoading}
+                    comments={comments}
+                />
+            </VStack>
+        );
+    },
+);

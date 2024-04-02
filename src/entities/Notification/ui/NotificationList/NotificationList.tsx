@@ -7,13 +7,11 @@ import cls from './NotificationList.module.scss';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 
 interface NotificationListProps {
-    className ?: string;
+    className?: string;
 }
 
 export const NotificationList = memo((props: NotificationListProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const { data, isLoading } = useNotificationsList(null, {
         pollingInterval: 10000,
@@ -21,7 +19,11 @@ export const NotificationList = memo((props: NotificationListProps) => {
 
     if (isLoading) {
         return (
-            <VStack gap="16" max className={classNames(cls.NotificationList, {}, [className])}>
+            <VStack
+                gap="16"
+                max
+                className={classNames(cls.NotificationList, {}, [className])}
+            >
                 <Skeleton width="100%" height="80px" border="8px" />
                 <Skeleton width="100%" height="80px" border="8px" />
                 <Skeleton width="100%" height="80px" border="8px" />
@@ -30,7 +32,11 @@ export const NotificationList = memo((props: NotificationListProps) => {
     }
 
     return (
-        <VStack gap="16" max className={classNames(cls.NotificationList, {}, [className])}>
+        <VStack
+            gap="16"
+            max
+            className={classNames(cls.NotificationList, {}, [className])}
+        >
             {data?.map((item) => (
                 <NotificationItem key={item.id} item={item} />
             ))}

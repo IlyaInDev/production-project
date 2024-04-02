@@ -21,11 +21,13 @@ export const Primary: Story = {
     args: {
         profileId: '1',
     },
-    decorators: [StoreDecorator({
-        user: {
-            authData: { id: '1' },
-        },
-    })],
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: { id: '1' },
+            },
+        }),
+    ],
     parameters: {
         mockData: [
             {
@@ -46,11 +48,13 @@ export const WithoutRate: Story = {
     args: {
         profileId: '1',
     },
-    decorators: [StoreDecorator({
-        user: {
-            authData: { id: '1' },
-        },
-    })],
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: { id: '1' },
+            },
+        }),
+    ],
     parameters: {
         mockData: [
             {

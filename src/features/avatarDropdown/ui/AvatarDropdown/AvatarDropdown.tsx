@@ -5,19 +5,20 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Dropdown } from '@/shared/ui/Popups';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions,
+    getUserAuthData,
+    isUserAdmin,
+    isUserManager,
+    userActions,
 } from '@/entities/User';
 import { Avatar } from '@/shared/ui/Avatar';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
-    className ?: string;
+    className?: string;
 }
 
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
@@ -38,12 +39,18 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
         <Dropdown
             className={classNames('', {}, [className])}
             direction="bottom left"
-            trigger={<Avatar fallbackInverted size={30} src={authData.avatar} />}
+            trigger={
+                <Avatar fallbackInverted size={30} src={authData.avatar} />
+            }
             items={[
-                ...(isAdminPanelAvailable ? [{
-                    content: t('Админка'),
-                    href: getRouteAdmin(),
-                }] : []),
+                ...(isAdminPanelAvailable
+                    ? [
+                          {
+                              content: t('Админка'),
+                              href: getRouteAdmin(),
+                          },
+                      ]
+                    : []),
                 {
                     content: t('Профиль'),
                     href: getRouteProfile(authData.id),

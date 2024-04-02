@@ -12,7 +12,11 @@ const meta: Meta<typeof Popover> = {
     tags: ['autodocs'],
     argTypes: {},
     decorators: [
-        (Story) => <div style={{ padding: 150 }}><Story /></div>,
+        (Story) => (
+            <div style={{ padding: 150 }}>
+                <Story />
+            </div>
+        ),
     ],
 };
 
@@ -22,11 +26,7 @@ type Story = StoryObj<typeof Popover>;
 export const BottomRight: Story = {
     args: {
         direction: 'bottom right',
-        trigger: (
-            <Button theme={ButtonTheme.OUTLINE}>
-                open
-            </Button>
-        ),
+        trigger: <Button theme={ButtonTheme.OUTLINE}>open</Button>,
         children: (
             <>
                 <Text title="Notification 1" text="Vasylii add new article" />
@@ -39,11 +39,7 @@ export const BottomRight: Story = {
 export const BottomLeft: Story = {
     args: {
         direction: 'bottom left',
-        trigger: (
-            <Button theme={ButtonTheme.OUTLINE}>
-                open
-            </Button>
-        ),
+        trigger: <Button theme={ButtonTheme.OUTLINE}>open</Button>,
         children: (
             <>
                 <Text title="Notification 1" text="Vasylii add new article" />
@@ -56,11 +52,7 @@ export const BottomLeft: Story = {
 export const TopRight: Story = {
     args: {
         direction: 'top right',
-        trigger: (
-            <Button theme={ButtonTheme.OUTLINE}>
-                open
-            </Button>
-        ),
+        trigger: <Button theme={ButtonTheme.OUTLINE}>open</Button>,
         children: (
             <>
                 <Text title="Notification 1" text="Vasylii add new article" />
@@ -73,14 +65,14 @@ export const TopRight: Story = {
 export const TopLeft: Story = {
     args: {
         direction: 'top left',
-        trigger: (
-            <Button theme={ButtonTheme.OUTLINE}>
-                open
-            </Button>
-        ),
+        trigger: <Button theme={ButtonTheme.OUTLINE}>open</Button>,
         children: (
             <>
-                <Text className="textStory" title="Notification 1" text="Vasylii add new article" />
+                <Text
+                    className="textStory"
+                    title="Notification 1"
+                    text="Vasylii add new article"
+                />
                 <Text title="Notification 2" text="Urii add new article" />
             </>
         ),

@@ -13,7 +13,11 @@ const meta: Meta<typeof Dropdown> = {
         // backgroundColor: { control: 'color' },
     },
     decorators: [
-        (Story) => <div style={{ padding: 150 }}><Story /></div>,
+        (Story) => (
+            <div style={{ padding: 150 }}>
+                <Story />
+            </div>
+        ),
     ],
 };
 

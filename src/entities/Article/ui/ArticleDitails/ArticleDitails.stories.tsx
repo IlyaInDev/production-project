@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ArticleBlockType, ArticleType } from '../../model/consts/articleConsts';
+import {
+    ArticleBlockType,
+    ArticleType,
+} from '../../model/consts/articleConsts';
 import { ArticleDitails } from './ArticleDitails';
 
 const meta: Meta<typeof ArticleDitails> = {
@@ -29,9 +32,7 @@ const article = {
         id: '1',
         username: 'Vasyan',
     },
-    type: [
-        ArticleType.IT,
-    ],
+    type: [ArticleType.IT],
     blocks: [
         {
             id: '1',

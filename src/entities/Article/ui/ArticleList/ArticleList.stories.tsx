@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ArticleBlockType, ArticleType, ArticleView } from '../../model/consts/articleConsts';
 import {
-    Article,
-} from '../../model/types/article';
+    ArticleBlockType,
+    ArticleType,
+    ArticleView,
+} from '../../model/consts/articleConsts';
+import { Article } from '../../model/types/article';
 import { ArticleList } from './ArticleList';
 
 const meta: Meta<typeof ArticleList> = {
@@ -32,9 +34,7 @@ const article = {
         username: 'Vasyan',
         avatar: '/avatar.jpg',
     },
-    type: [
-        ArticleType.IT,
-    ],
+    type: [ArticleType.IT],
     blocks: [
         {
             id: '1',
@@ -113,12 +113,10 @@ export const LoadingSmall: Story = {
 export const ArticlesBig: Story = {
     args: {
         isLoading: false,
-        articles: new Array(16)
-            .fill(0)
-            .map((art, index) => ({
-                ...article,
-                id: String(index),
-            })),
+        articles: new Array(16).fill(0).map((art, index) => ({
+            ...article,
+            id: String(index),
+        })),
         view: ArticleView.BIG,
     },
 };
@@ -126,12 +124,10 @@ export const ArticlesBig: Story = {
 export const ArticlesSmall: Story = {
     args: {
         isLoading: false,
-        articles: new Array(16)
-            .fill(0)
-            .map((art, index) => ({
-                ...article,
-                id: String(index),
-            })),
+        articles: new Array(16).fill(0).map((art, index) => ({
+            ...article,
+            id: String(index),
+        })),
         view: ArticleView.SMALL,
     },
 };

@@ -15,9 +15,7 @@ const data: Article = {
         id: '1',
         username: 'Vasyan',
     },
-    type: [
-        ArticleType.IT,
-    ],
+    type: [ArticleType.IT],
     blocks: [
         {
             id: '1',
@@ -82,10 +80,12 @@ describe('profileSlice.test', () => {
         const state: DeepPartial<ArticleDitailsSchema> = {
             isLoading: false,
         };
-        expect(articleDitailsReducer(
-            state as ArticleDitailsSchema,
-            fetchArticleById.pending,
-        )).toEqual({ isLoading: true });
+        expect(
+            articleDitailsReducer(
+                state as ArticleDitailsSchema,
+                fetchArticleById.pending,
+            ),
+        ).toEqual({ isLoading: true });
     });
 
     test('test articleDitails service fulfilled', () => {
@@ -93,10 +93,12 @@ describe('profileSlice.test', () => {
             data,
             isLoading: true,
         };
-        expect(articleDitailsReducer(
-            state as ArticleDitailsSchema,
-            fetchArticleById.fulfilled(data, '1', ''),
-        )).toEqual({
+        expect(
+            articleDitailsReducer(
+                state as ArticleDitailsSchema,
+                fetchArticleById.fulfilled(data, '1', ''),
+            ),
+        ).toEqual({
             isLoading: false,
             data,
             error: undefined,

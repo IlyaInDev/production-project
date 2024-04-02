@@ -14,7 +14,17 @@ const meta: Meta<typeof AvatarDropdown> = {
         // backgroundColor: { control: 'color' },
     },
     decorators: [
-        (Story) => <div style={{ padding: '20px', display: 'flex', justifyContent: 'flex-end' }}><Story /></div>,
+        (Story) => (
+            <div
+                style={{
+                    padding: '20px',
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                }}
+            >
+                <Story />
+            </div>
+        ),
     ],
 };
 
@@ -23,28 +33,32 @@ type Story = StoryObj<typeof AvatarDropdown>;
 
 export const Admin: Story = {
     args: {},
-    decorators: [StoreDecorator({
-        user: {
-            authData: {
-                id: '1',
-                username: 'Bob',
-                roles: [UserRole.ADMIN],
-                avatar: '/avatar.jpg',
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: {
+                    id: '1',
+                    username: 'Bob',
+                    roles: [UserRole.ADMIN],
+                    avatar: '/avatar.jpg',
+                },
             },
-        },
-    })],
+        }),
+    ],
 };
 
 export const User: Story = {
     args: {},
-    decorators: [StoreDecorator({
-        user: {
-            authData: {
-                id: '1',
-                username: 'Bob',
-                roles: [UserRole.USER],
-                avatar: '/avatar.jpg',
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: {
+                    id: '1',
+                    username: 'Bob',
+                    roles: [UserRole.USER],
+                    avatar: '/avatar.jpg',
+                },
             },
-        },
-    })],
+        }),
+    ],
 };

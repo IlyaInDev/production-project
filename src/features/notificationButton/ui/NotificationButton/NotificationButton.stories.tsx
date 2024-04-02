@@ -34,7 +34,11 @@ const meta: Meta<typeof NotificationButton> = {
     },
     decorators: [
         StoreDecorator({}),
-        (Story) => <div style={{ display: 'flex', justifyContent: 'flex-end' }}><Story /></div>,
+        (Story) => (
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <Story />
+            </div>
+        ),
     ],
 };
 

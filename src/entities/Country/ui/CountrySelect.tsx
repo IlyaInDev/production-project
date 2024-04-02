@@ -19,12 +19,7 @@ const options = [
 ];
 
 export const CountrySelect = (props: CountrySelectProps) => {
-    const {
-        className,
-        value,
-        onChange,
-        readonly,
-    } = props;
+    const { className, value, onChange, readonly } = props;
 
     const { t } = useTranslation('profile');
 

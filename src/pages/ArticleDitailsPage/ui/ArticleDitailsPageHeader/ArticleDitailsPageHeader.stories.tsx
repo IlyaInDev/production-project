@@ -17,36 +17,40 @@ type Story = StoryObj<typeof ArticleDitailsPageHeader>;
 
 export const CanEdit: Story = {
     args: {},
-    decorators: [StoreDecorator({
-        user: {
-            authData: {
-                id: '1',
-            },
-        },
-        articleDitailes: {
-            data: {
-                user: {
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: {
                     id: '1',
                 },
             },
-        },
-    })],
+            articleDitailes: {
+                data: {
+                    user: {
+                        id: '1',
+                    },
+                },
+            },
+        }),
+    ],
 };
 
 export const CannotEdit: Story = {
     args: {},
-    decorators: [StoreDecorator({
-        user: {
-            authData: {
-                id: '1',
-            },
-        },
-        articleDitailes: {
-            data: {
-                user: {
-                    id: '2',
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: {
+                    id: '1',
                 },
             },
-        },
-    })],
+            articleDitailes: {
+                data: {
+                    user: {
+                        id: '2',
+                    },
+                },
+            },
+        }),
+    ],
 };

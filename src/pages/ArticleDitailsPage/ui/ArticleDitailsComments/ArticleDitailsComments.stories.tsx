@@ -19,33 +19,35 @@ type Story = StoryObj<typeof ArticleDitailsComments>;
 
 export const WithComments: Story = {
     args: {},
-    decorators: [StoreDecorator({
-        articleDitailsPage: {
-            comments: {
-                entities: {
-                    1: {
-                        id: '1',
-                        user: {
+    decorators: [
+        StoreDecorator({
+            articleDitailsPage: {
+                comments: {
+                    entities: {
+                        1: {
                             id: '1',
-                            username: 'Vasyan',
-                            avatar: '/avatar.jpg',
+                            user: {
+                                id: '1',
+                                username: 'Vasyan',
+                                avatar: '/avatar.jpg',
+                            },
+                            text: 'Such a cool article!',
                         },
-                        text: 'Such a cool article!',
-                    },
-                    2: {
-                        id: '2',
-                        user: {
-                            id: '4',
-                            username: 'Genadii',
-                            avatar: '/avatar.jpg',
+                        2: {
+                            id: '2',
+                            user: {
+                                id: '4',
+                                username: 'Genadii',
+                                avatar: '/avatar.jpg',
+                            },
+                            text: 'So informative!',
                         },
-                        text: 'So informative!',
                     },
+                    ids: ['1', '2'],
                 },
-                ids: ['1', '2'],
             },
-        },
-    })],
+        }),
+    ],
 };
 
 export const WithoutComments: Story = {

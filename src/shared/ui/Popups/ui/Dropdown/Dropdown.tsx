@@ -22,25 +22,31 @@ interface DropdownProps {
 }
 
 export function Dropdown(props: DropdownProps) {
-    const {
-        className, items, trigger, direction = 'bottom right',
-    } = props;
+    const { className, items, trigger, direction = 'bottom right' } = props;
 
     const menuClasses = [mapDirectionClass[direction]];
 
     return (
-        <Menu as="div" className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}>
+        <Menu
+            as="div"
+            className={classNames(cls.Dropdown, {}, [
+                className,
+                popupCls.popup,
+            ])}
+        >
             <Menu.Button as="div" className={popupCls.trigger}>
                 {trigger}
             </Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 {items.map((item, index) => {
-                    const content = ({ active }: {active: boolean}) => (
+                    const content = ({ active }: { active: boolean }) => (
                         <button
                             type="button"
                             onClick={item.onClick}
                             disabled={item.disabled}
-                            className={classNames(cls.item, { [cls.active]: active })}
+                            className={classNames(cls.item, {
+                                [cls.active]: active,
+                            })}
                         >
                             {item.content}
                         </button>
@@ -60,7 +66,10 @@ export function Dropdown(props: DropdownProps) {
                     }
 
                     return (
-                        <Menu.Item disabled={item.disabled} key={`deopdown-key-${index}`}>
+                        <Menu.Item
+                            disabled={item.disabled}
+                            key={`deopdown-key-${index}`}
+                        >
                             {content}
                         </Menu.Item>
                     );

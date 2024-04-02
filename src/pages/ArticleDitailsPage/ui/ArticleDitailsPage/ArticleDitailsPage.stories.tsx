@@ -98,34 +98,36 @@ const article2: Article = {
 
 export const Primary: Story = {
     args: {},
-    decorators: [StoreDecorator({
-        articleDitailes: {
-            data: article1,
-            error: '',
-            isLoading: false,
-        },
-        articleDitailsPage: {
-            comments: {
-                entities: {
-                    1: {
-                        id: '1',
-                        user: {
-                            id: '1',
-                            username: 'Vasyan',
-                        },
-                        text: 'Such a cool article!',
-                    },
-                    2: {
-                        id: '2',
-                        user: {
-                            id: '4',
-                            username: 'Genadii',
-                        },
-                        text: 'So informative!',
-                    },
-                },
-                ids: ['1', '2'],
+    decorators: [
+        StoreDecorator({
+            articleDitailes: {
+                data: article1,
+                error: '',
+                isLoading: false,
             },
-        },
-    })],
+            articleDitailsPage: {
+                comments: {
+                    entities: {
+                        1: {
+                            id: '1',
+                            user: {
+                                id: '1',
+                                username: 'Vasyan',
+                            },
+                            text: 'Such a cool article!',
+                        },
+                        2: {
+                            id: '2',
+                            user: {
+                                id: '4',
+                                username: 'Genadii',
+                            },
+                            text: 'So informative!',
+                        },
+                    },
+                    ids: ['1', '2'],
+                },
+            },
+        }),
+    ],
 };

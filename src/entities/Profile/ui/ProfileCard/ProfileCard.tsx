@@ -12,7 +12,7 @@ import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
     className?: string;
-    data?: Profile
+    data?: Profile;
     isLoading?: boolean;
     error?: string;
     readonly?: boolean;
@@ -47,7 +47,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <HStack max justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <HStack
+                max
+                justify="center"
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.loading,
+                ])}
+            >
                 <Loader />
             </HStack>
         );
@@ -55,7 +62,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (error) {
         return (
-            <HStack justify="center" max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack
+                justify="center"
+                max
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Произошла ошибка при загрузке профиля')}

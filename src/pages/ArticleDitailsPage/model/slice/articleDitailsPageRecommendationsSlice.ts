@@ -8,18 +8,24 @@ const recommendationsAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
 });
 
-export const getArticleRecommendations = recommendationsAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDitailsPage?.recommendations || recommendationsAdapter.getInitialState(),
-);
+export const getArticleRecommendations =
+    recommendationsAdapter.getSelectors<StateSchema>(
+        (state) =>
+            state.articleDitailsPage?.recommendations ||
+            recommendationsAdapter.getInitialState(),
+    );
 
 const articleDitailsPageRecommendationsSlice = createSlice({
     name: 'articleDetailsPageRecommendationsSlice',
-    initialState: recommendationsAdapter.getInitialState<ArticleDitailsRecommendationsSchema>({
-        isLoading: false,
-        error: undefined,
-        ids: [],
-        entities: {},
-    }),
+    initialState:
+        recommendationsAdapter.getInitialState<ArticleDitailsRecommendationsSchema>(
+            {
+                isLoading: false,
+                error: undefined,
+                ids: [],
+                entities: {},
+            },
+        ),
     reducers: {},
     extraReducers: (builder) => {
         builder
@@ -27,10 +33,7 @@ const articleDitailsPageRecommendationsSlice = createSlice({
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(fetchArticleRecommendations.fulfilled, (
-                state,
-                action,
-            ) => {
+            .addCase(fetchArticleRecommendations.fulfilled, (state, action) => {
                 state.isLoading = false;
                 recommendationsAdapter.setAll(state, action.payload);
             })
@@ -41,6 +44,5 @@ const articleDitailsPageRecommendationsSlice = createSlice({
     },
 });
 
-export const {
-    reducer: articleDitailsPageRecommendationsReducer,
-} = articleDitailsPageRecommendationsSlice;
+export const { reducer: articleDitailsPageRecommendationsReducer } =
+    articleDitailsPageRecommendationsSlice;
